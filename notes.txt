@@ -1,0 +1,11 @@
+class --- table 
+
+entity -> {bean} 
+
+
+
+how to create reposiory 
+	-> interface 
+	->extends JpaRepository 
+	
+	
