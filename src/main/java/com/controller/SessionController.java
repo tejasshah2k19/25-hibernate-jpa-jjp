@@ -35,4 +35,17 @@ public class SessionController {
 		return "ListStudent";
 	}
 
+	@GetMapping("searchstudent")
+	public String searchStudent() {
+		return "SearchStudent";
+	}
+	
+	
+	@PostMapping("searchstudent")
+	public String searchStudent(String firstName,Model model) {
+		List<StudentEntity> students = studentRepository.findByAnyFirstName("%"+firstName+"%"); // select * from students
+		model.addAttribute("students",students);
+		return "SearchStudent";
+	}
+
 }
